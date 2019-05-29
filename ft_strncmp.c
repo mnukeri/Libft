@@ -19,7 +19,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	p = 0;
 	k = 1;
-	while (s1[p] != '\0' &&s2[p] != '\0' && s1[p] == s2[p] && k < n)
+	while (s1[p] != '\0' && s2[p] != '\0' && s1[p] == s2[p] && k < n)
 	{
 		p++;
 		k++;
