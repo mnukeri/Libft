@@ -11,7 +11,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	k = ft_strlen(src);
 	rem = destsize - p;
 	m = 0;
-
 	if (rem > k)
 	{
 		while (m < rem && src[m] != '\0')
@@ -24,6 +23,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	}
 	else
 	{
-		return (p + m + k);
+		return (p + rem + k);
 	}
 }
