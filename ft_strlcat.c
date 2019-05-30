@@ -7,40 +7,23 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 	size_t rem;
 	size_t m;
 
-	p = 0;
-	while (dest[p] != '\0')
-	{
-		p++;
-	}
+	p = ft_strlen(dest);
+	k = ft_strlen(src);
 	rem = destsize - p;
-	k = 0;
-	while (src[k] != '\0')
-	{
-		k++;
-	}
 	m = 0;
-	if (k < rem)
+
+	if (rem > k)
 	{
-		dest[p + m] = src[m];
-		m++;
-	}
-	else
-	{
-		while (src[m] != '\0' && k < rem)
+		while (m < rem && src[m] != '\0')
 		{
 			dest[p + m] = src[m];
 			m++;
 		}
+		dest[p + m] = '\0';
+		return (p + m);
 	}
-	return (p + k);
-}
-
-int	main()
-{
-	char str[50] = "this marks the rising";
-	char stp[] = ", your heart doesn't stand a chance, it is getting hectic now";
-
-	printf("%zu\n", ft_strlcat(str, stp, sizeof(str)));
-	//printf("%zu", sizeof(str));
-	return (0);
+	else
+	{
+		return (p + m + k);
+	}
 }
