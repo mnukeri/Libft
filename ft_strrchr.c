@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/03 15:13:14 by mnukeri           #+#    #+#             */
+/*   Updated: 2019/06/03 15:16:22 by mnukeri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -5,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int p;
 
 	p = sizeof(s);
-	while (p >= 0)
+	while (p > = 0)
 	{
 		if (s[p] == c)
 		{
@@ -13,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		else
 		{
-		p--;
+			p--;
 		}
 	}
 	return (0);
