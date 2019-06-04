@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/03 18:56:44 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/04 17:43:28 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
+# include <strings.h>
 # include <stdlib.h>
 # include <ctype.h>
 
@@ -33,8 +34,12 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+void	*ft_memset(void *str, int c, size_t len);
+void	ft_bzero(void *str, size_t n);
 
 #endif
