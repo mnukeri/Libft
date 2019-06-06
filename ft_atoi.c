@@ -1,32 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/06 17:20:13 by mnukeri           #+#    #+#             */
+/*   Updated: 2019/06/06 17:21:40 by mnukeri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int k;
+	int		sum;
+	int		p;
+	char	chr;
+	char	sign;
 
-	k = 0;
-	while (str[k] != '\0' && str[k] != ',')
+	p = 0;
+	sum = 0;
+	sign = *str;
+	if (str[p] == '-' || str[p] == '+')
+		p++;
+	while ((chr = str[p]) >= '0' && chr <= '9')
 	{
-		if ((str[k] >= 'a' && str[k] <= 'z') || (str[k] >= 'A' && str[k] <= 'Z'))
-		{
-			k++;
-		}
-		else
-		{
-			write(1, &str[k], 1);
-			if (str[k + 1] == ',')
-				break;
-			k++;
-		}
+		sum = sum * 10 - (chr - '0');
+		p++;
 	}
-	return(0);
-}
-
-int	main()
-{
-	char stp[] = "3249,587";//skyline, I'm goinfg to reach that Skyline tho, be on that lookout";
-
-	printf("%d\n", ft_atoi(stp));
-	printf("%d", atoi(stp));
-	return (0);
+	if (sign != '-')
+	{
+		sum = -sum;
+	}
+	return (sum);
 }
