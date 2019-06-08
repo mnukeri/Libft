@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/07 18:14:50 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/08 16:31:09 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
-
 
 #endif
