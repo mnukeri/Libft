@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:27:24 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/05/22 15:41:06 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/08 15:07:31 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	int p;
-
+	size_t p;
+	
 	p = 0;
-	while (src[0] != '\0')
+	while (src[p] != '\0')
 	{
 		dest[p] = src[p];
 		p++;
