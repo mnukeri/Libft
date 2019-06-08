@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:40:46 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/03 15:50:00 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/08 17:00:44 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int		ft_isalnum(int c)
 {
-	int p;
-	int k;
-
-	p = ft_isalpha(c);
-	k = ft_isdigit(c);
-	if (p > 0 || k > 0)
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	if(c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
