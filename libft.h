@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/10 13:16:49 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/11 12:36:08 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_strclr(char *str);
 char	ft_strsplit(char const *str, char c);
+char	*ft_strtrim(char const *s);
+void	ft_putendl(char const *s);
 
 #endif
