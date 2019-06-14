@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/14 11:51:11 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/14 17:57:40 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		ft_atoi(const char *str);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 void	ft_putnbr(int n);
 void	ft_strclr(char *str);
 char	**ft_strsplit(char const *str, char c);
@@ -62,5 +63,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_strdel(char **as);
 
 #endif
