@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/14 17:57:40 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/16 15:49:42 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,7 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_strdel(char **as);
+void	*ft_memalloc(size_t size);
+void	ft_striter(char *s, void (*f)(char*));
 
 #endif
