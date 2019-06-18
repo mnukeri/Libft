@@ -6,81 +6,62 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/11 18:34:45 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/18 17:55:55 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_malloc(int k, int p)
-{
-	int m;
-
-	m = 0;
-	while (m < k)
-	{
-		new[m] = (char*)malloc(p * sizeof(char));
-		if (new[m] == NULL)
-			return (NULL);
-		m++;
-	}
-	new[m] = '\0';
-	return (new);
-}
-
-int		ft_wc(char *str, int c)
+int		ft_rows(char *str, char c)
 {
 	int p;
 	int k;
 
 	p = 0;
 	k = 0;
-	while (str[p] != '\0')
+	while (str[p] != 0)
+	{
 		if (str[p] == c)
 			k++;
 		p++;
+	}
+	return (k + 1);
+}
+
+int		ft_cols(char *str, char ct)
+{
+	int k;
+
+	k = 0;
+	while (str[k] != ct)
+	{
+		k++;
+	}
 	return (k);
 }
 
 char	**ft_strsplit(char const *str, char c)
 {
-	int p;
-	int k;
-	int m;
-	char *st;
-	char **new;
+	size_t	p;
+	size_t	i;
+	size_t	j;
+	size_t	rows;
+	size_t	cols;
+	char	**st;
+	char	*sti;
 
-	st = (char*)str;
-	k = ft_wc(st, c);
-	new = (char **)malloc((k + 2) * sizeof(char *));
-	if (new == NULL)
-		return (NULL);
-		
-	p = 0;
-	m = 0;
-	while (st[p] != '\0')
-	{
-		k = 0;
-		while (st[p] != ' ')
-		{
-			new[m][k] = st[p];
-			p++;
-			k++;
-		}
-		m++;
-	}
-	new[m][1] = '\0';
-	return ((char **)new);
+	rows = ft_rows(str);
+	
+
 }
 
-int 	main()
+int main()
 {
-	
-	char stp[] = "cause lately i have been a lil fed up, wish you would just";
-	char **s;
+	char stp[] = "you are just a big baddie rn";
+	//char *cl;
 
-	s = ft_strsplit(stp, ' ');	
-	printf("%s\n", s[1]);
-	printf("%s", stp);
+	//cl = *ft_strsplit(stp, ' ');
+	printf("%d", ft_rows(stp, ' '));
+//	printf("%s", cl);
 	return (0);
 }
