@@ -6,62 +6,80 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/18 17:55:55 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/19 18:26:28 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_rows(char *str, char c)
+int		ft_rows(char *str)
 {
-	int p;
 	int k;
+	int p;
 
-	p = 0;
 	k = 0;
-	while (str[p] != 0)
+	p = 0;
+	while (str[k] != '\0')
 	{
-		if (str[p] == c)
+		if (str[k] == c)
 			k++;
 		p++;
 	}
 	return (k + 1);
 }
 
-int		ft_cols(char *str, char ct)
-{
-	int k;
-
-	k = 0;
-	while (str[k] != ct)
-	{
-		k++;
-	}
-	return (k);
-}
-
 char	**ft_strsplit(char const *str, char c)
 {
-	size_t	p;
-	size_t	i;
-	size_t	j;
-	size_t	rows;
-	size_t	cols;
-	char	**st;
-	char	*sti;
+	int		p;
+	int		i;
+	int		j;
+	char	**y;
 
 	rows = ft_rows(str);
-	
-
+	y = (char**)malloc(sizeof(char*) * rows);
+	if (y == NULL)
+		return (NULL);
+	i = 0;
+	while (i < 10)
+	{
+		y[i] = (char*)malloc(sizeof(char) * 10);
+		if (y[i] == NULL)
+			return (NULL);
+		i++;
+	}
+	i = 0;
+	j = 0;
+	p = 0;
+	while (str[p] != '\0' && i < 10)
+	{
+		if (str[p] == c)
+		{
+			i++;
+			p++;
+			j = 0;
+		}
+		else
+		{
+			y[i][j] = str[p];
+			j++;
+			p++;
+		}
+	}
+	y[i][j] = '\0';
+	return (y);
 }
 
 int main()
 {
-	char stp[] = "you are just a big baddie rn";
-	//char *cl;
+	char stp[] = "we just like playing the big party, yeah bruv, listen";
+	char **cl;
+	int		m;
 
-	//cl = *ft_strsplit(stp, ' ');
-	printf("%d", ft_rows(stp, ' '));
-//	printf("%s", cl);
+	cl = ft_strsplit(stp, ' ');
+	m = 0;
+	while (m < 10)
+	{
+		printf("%s\n", cl[m++]);
+	}
 	return (0);
 }
