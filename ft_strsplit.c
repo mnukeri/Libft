@@ -6,11 +6,12 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/22 15:29:23 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/24 14:50:23 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <ctype.h>
 
 int		ft_wc(const char *str, char c)
 {
@@ -21,24 +22,11 @@ int		ft_wc(const char *str, char c)
 	k = 0;
 	while (str[p])
 	{
-		if (str[p] == c && str[p + 1] != c)
+		if (str[p] == c && str[p - 1] != c)
 			k++;
 		p++;
 	}
 	return (k);
-}
-
-int		ft_chrcou(const char *str, char c)
-{
-	int		p;
-
-	p = 0;
-	while (str[p])
-	{
-		if (str[p] != c)
-			p++;
-	}
-	return (p);
 }
 
 char	**ft_strsplit(char const *str, char c)
@@ -46,12 +34,10 @@ char	**ft_strsplit(char const *str, char c)
 	int		p;
 	int		i;
 	int		j;
-	int		k;
 	int		rows;
 	char	**y;
 
 	rows = ft_wc(str, c) + 1;
-	printf("%d\n", rows);
 	y = (char**)malloc(sizeof(char*) * rows);
 	if (y == NULL)
 		return (NULL);
@@ -61,10 +47,8 @@ char	**ft_strsplit(char const *str, char c)
 	{
 		while (str[p] == c && str[p])
 			p++;
-		if (str[p])
+		if (ft_isprint(str[p]) == 1)
 		{
-			k = ft_chrcou(&str[p], c);
-			printf("%d\n", k);
 			y[i] = (char*)malloc(sizeof(char) * 15);
 			if (y[i] == NULL)
 				return (NULL);
@@ -85,17 +69,18 @@ char	**ft_strsplit(char const *str, char c)
 
 int main()
 {
-	char stp[] = "    The   does   of    the screen is changing with the motion you.   ";
-/*	char **cl;
+	char stp[] = "  Cav' your  boi   doing the most  just  net vir kontrol, neh   but do not forget to  not   catch feelings bruv,  yeah yeah she's cutest and all   but     bruv,  please,   'rather the flu than      feelings     .  ";
+	char **cl;
 	int		m;
+	int rows;
 
+	rows = ft_wc(stp, ' ');
+	printf("rows: %d\n", rows);
 	cl = ft_strsplit(stp, ' ');
 	m = 0;
-	while (m < 13)
+	while (cl[m])
 	{
 		printf("%s\n", cl[m++]);
-	}*/
-	printf("%d\n", ft_chrcou(&stp, ' '));
-	printf("%d", ft_wc(stp, ' '));
+	}
 	return (0);
 }
