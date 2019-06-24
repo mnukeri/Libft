@@ -6,28 +6,12 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/24 14:50:23 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/24 17:49:57 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <ctype.h>
-
-int		ft_wc(const char *str, char c)
-{
-	int		p;
-	int		k;
-
-	p = 0;
-	k = 0;
-	while (str[p])
-	{
-		if (str[p] == c && str[p - 1] != c)
-			k++;
-		p++;
-	}
-	return (k);
-}
 
 char	**ft_strsplit(char const *str, char c)
 {
@@ -37,39 +21,30 @@ char	**ft_strsplit(char const *str, char c)
 	int		rows;
 	char	**y;
 
-	rows = ft_wc(str, c) + 1;
-	y = (char**)malloc(sizeof(char*) * rows);
-	if (y == NULL)
+	if (!(y = (char**)malloc(sizeof(char*) * (ft_wc(str, c)))))
 		return (NULL);
+	rows = ft_wc(str, c);
 	i = 0;
 	p = 0;
-	while (str[p] != '\0' && i < rows)
+	while (str[p] && i < rows)
 	{
 		while (str[p] == c && str[p])
 			p++;
-		if (ft_isprint(str[p]) == 1)
-		{
-			y[i] = (char*)malloc(sizeof(char) * 15);
-			if (y[i] == NULL)
-				return (NULL);
-			j = 0;
-			while (str[p] && str[p] != c)
-			{
-				y[i][j] = str[p];
-				j++;
-				p++;
-			}
-			y[i][j] = '\0';
-		}
+		y[i] = ft_memalloc(15);
+		j = 0;
+		while (str[p + j] != '\0' && str[p + j] != c)
+			j++;
+		y[i] = ft_strsub(str, p, j);
+		p = p + j;
 		i++;
 	}
 	y[i] = NULL;
 	return (y);
 }
 
-int main()
+int		main(void)
 {
-	char stp[] = "  Cav' your  boi   doing the most  just  net vir kontrol, neh   but do not forget to  not   catch feelings bruv,  yeah yeah she's cutest and all   but     bruv,  please,   'rather the flu than      feelings     .  ";
+	char stp[] = "bu the  iyou  ";// keys be playing hard , all 4our of 'em  ";
 	char **cl;
 	int		m;
 	int rows;
