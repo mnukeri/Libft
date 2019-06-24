@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/16 17:31:05 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/24 18:40:48 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
 
@@ -69,5 +68,6 @@ void	ft_striter(char *s, void (*f)(char*));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_wc(const char *str, char c);
 
 #endif
