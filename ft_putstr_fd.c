@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 11:01:09 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/14 11:13:40 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/28 22:06:14 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	int p;
 
+	if (s == NULL)
+		return ;
 	p = 0;
 	while (s[p] != '\0')
 	{
