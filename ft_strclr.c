@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 11:43:42 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/10 12:24:17 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/28 21:47:32 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_strclr(char *str)
 	int p;
 
 	p = 0;
+	if (str == NULL)
+		return ;
 	while (str[p] != '\0')
 	{
 		str[p] = '\0';
