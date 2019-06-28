@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/25 10:43:27 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/28 16:44:42 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char		**ft_strsplit(char const *str, char c)
 	int		j;
 	char	**y;
 
+	if (str == NULL)
+		return (NULL);
 	if (!(y = (char**)malloc(sizeof(char*) * ft_wc(str, c))))
 		return (NULL);
 	i = 0;
