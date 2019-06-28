@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 12:14:55 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/11 12:37:30 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/28 22:03:41 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	ft_putendl(char const *s)
 	unsigned char	*st;
 	char			p;
 
-	st = (unsigned char *)s;
+	if (s == NULL)
+		return ;
+	if (!(st = (unsigned char *)s))
+		return ;
 	k = 0;
 	while (st[k] != '\0')
 	{
