@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:13:14 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/03 18:51:32 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/29 15:06:12 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int p;
 
-	p = sizeof(s);
+	p = ft_strlen(s);
 	while (p >= 0)
 	{
 		if (s[p] == c)
