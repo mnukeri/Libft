@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 15:50:23 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/06/05 16:13:32 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/30 17:41:55 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,23 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	unsigned char	*st;
 	unsigned char	*s;
 
+	if (len == 0 || dest == src)
+		return (dest);
 	st = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	p = 0;
-	while (p < len)
+	if (s > st)
 	{
-		st[p] = s[p];
-		p++;
+		while (p < len)
+		{
+			st[p] = s[p];
+			p++;
+		}
+	}
+	else
+	{
+		while (len--)
+			st[len] = s[len];
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 16:32:16 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/05/25 16:57:11 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/06/29 15:45:44 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 	size_t p;
 	size_t k;
 
+	if (len == 0)
+		return (0);
 	p = 0;
 	k = 0;
-	while (src[0] != '\0' && k < len)
+	while (src[p] != '\0' && k < len)
 	{
 		dest[p] = src[p];
 		p++;
 		k++;
 	}
-	dest[p] = '\0';
 	return (dest);
 }
