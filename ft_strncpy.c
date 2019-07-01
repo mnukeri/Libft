@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 16:32:16 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/07/01 13:12:49 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/07/01 16:35:48 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 	size_t p;
 	size_t k;
 
-	if (!(src))
-		return (0);
 	if (len == 0)
 		return (0);
 	ft_bzero(dest, len);
