@@ -19,14 +19,12 @@ char	*ft_strtrim(char const *s)
 	char	*new;
 	int		m;
 	int		k;
-	int		n;
 
 	if (s == NULL)
 		return (NULL);
 	p = 0;
 	while (s[p] == '\t' || s[p] == ' ' || s[p] == '\n')
 		p++;
-	n = p;
 	m = ft_strlen(s) - 1;
 	if (m > p)
 		while (s[m] == ' ' || s[m] == '\t' || s[m] == '\n')

@@ -40,8 +40,7 @@ char			*ft_itoa(int n)
 		p++;
 		neg = -1;
 	}
-	if (!(st = (char*)malloc(sizeof(char) * (p + 1))) || (n < -2147483648 ||
-				n > 2147483647))
+	if (!(st = (char*)malloc(sizeof(char) * (p + 1))))
 		return (NULL);
 	ft_memset(st, '\0', p + 1);
 	while (p-- > 0)
