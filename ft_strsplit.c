@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 static int	ft_wc(const char *str, char c)
 {
 	int	p;
@@ -30,7 +30,7 @@ static int	ft_wc(const char *str, char c)
 	if (str[p] == '\0' && str[p - 1] != c)
 		k++;
 	return (k);
-}*/
+}
 
 char		**ft_strsplit(char const *str, char c)
 {

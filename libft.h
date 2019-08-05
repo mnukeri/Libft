@@ -70,7 +70,7 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 void	ft_memdel(void **ap);
-void	ft_swap(int *a, int *b);
-int		ft_wc(const char *str, char c);
+void	ft_swap(char *a, char *b);
+int		ft_iscaps(int c);
 
 #endif
