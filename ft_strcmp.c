@@ -23,12 +23,19 @@ int		ft_strcmp(const char *s1, const char *s2)
 	{
 		if (ft_iscaps(s1[i]) == 1 && ft_iscaps(s2[i]) != 1)
 			return (1);
-		else
-			return (-1);
 	}
 	if (s1[i] < s2[i])
 		return (-1);
 	if (s1[i] > s2[i])
 		return (1);
+	return (0);
+}
+int	main()
+{
+	char s[] = "libft-U";
+	char st[] = "libft-u";
+
+	ft_putnbr(ft_strcmp(s, st));
+	ft_putchar('\n');
 	return (0);
 }
