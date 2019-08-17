@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	ft_swap(char *a, char *b)
+void	ft_char_swap(char *a, char *b)
 {
 	char	temp;
 
