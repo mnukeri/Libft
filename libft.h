@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/07/08 15:08:17 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/08/17 02:43:59 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 void	ft_memdel(void **ap);
-void	ft_swap(char *a, char *b);
+void	ft_char_swap(char *a, char *b);
 int		ft_iscaps(int c);
+void	ft_int_swap(int *a, int *b);
 
 #endif
