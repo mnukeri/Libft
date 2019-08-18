@@ -6,7 +6,7 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:02:38 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/08/17 02:43:59 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/08/18 13:47:12 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	ft_memdel(void **ap);
 void	ft_char_swap(char *a, char *b);
 int		ft_iscaps(int c);
 void	ft_int_swap(int *a, int *b);
+int		ft_wc(const char *str, char c);
 
 #endif

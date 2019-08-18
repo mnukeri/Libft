@@ -6,31 +6,11 @@
 /*   By: mnukeri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:41:00 by mnukeri           #+#    #+#             */
-/*   Updated: 2019/07/04 14:28:00 by mnukeri          ###   ########.fr       */
+/*   Updated: 2019/08/18 13:50:25 by mnukeri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_wc(const char *str, char c)
-{
-	int	p;
-	int	k;
-
-	p = 0;
-	k = 0;
-	if (str[0] == c)
-		p++;
-	while (str[p])
-	{
-		if (str[p] == c && str[p - 1] != c)
-			k++;
-		p++;
-	}
-	if (str[p] == '\0' && str[p - 1] != c)
-		k++;
-	return (k);
-}
 
 char		**ft_strsplit(char const *str, char c)
 {
